@@ -14,32 +14,9 @@
   </head>
 
   <body>
-      {{> nav }}
-      
-    <br>
-    <hr>
    
     {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}
     {{{body}}}
 
-    <br>
-    <hr>
-    {{#with footer}}
-      <footer>
-        <div>
-          {{> footer}}
-        </div>
-        <br>
-        <div>
-          <em>Copyright by {{../header/name/firstname}} {{../header/name/lastname}}</em>
-        </div>
-        <br>
-        <div>
-          <address>
-            {{../header/address}}
-          </address>
-        </div>
-      </footer>
-    {{/with}}
   </body>
 </html>
