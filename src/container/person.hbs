@@ -1,0 +1,78 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+  {{#with person}}
+    
+    <div>
+      <h1>{{name}}</h1>
+    </div>
+    <div>{{age}}, {{gender}}</div>
+     
+    <br>
+
+    <div>
+      <b>Address</b>
+    <div>
+      <address>123 Main St, New York, NY, 10001, USA</address>
+    </div> 
+    <br>
+    <hr>
+    
+    <div>
+      <b>Education</b>
+    </div>
+    
+    <div>degree: Bachelor of Science</div>
+    <div>major: Computer Science</div>
+    <div>university: Massachusetts Institute of Technology</div>
+    <div>graduationYear: 2012</div> 
+
+    <br>
+
+    <div>
+      <b>WorkExperience</b>
+    </div>
+    <div>Google</div>
+    <div>Software Engineer</div>
+    <div>2012.06.01-2016.12.31</div>
+    <p>Developed new features for Google Maps,
+    Worked on improving search algorithms,</p>
+
+    <br>
+    <div>1990,Technology</div>
+    <div>John Smith,CEO</div>
+    <div>Executive</div>
+    <br>
+    <em>Projects</em>
+    <div>Project Alpha</div>
+    <div>Developing new software platform (In Progress)</div>
+    <em>Teams</em>
+    <div>Awesome Team</div>
+    <div>John Smith,Team Leader</div>
+    <div>john.smith@example.com</div>
+    <em>Team_members</em>
+    <div>Alice Johnson,Tehnology Engineer</div>
+    <div>alice.johnson@example.com</div>
+    <div>Java, Python, SQL</div>
+    <br>
+    <em>Projects</em>
+    <div>Project A</div>
+    <div>Lorem ipsum dolor sit amet</div>
+    <div>Java,Spring Framework</div>
+    <em>Team_members</em>
+    <div>Bob Lee,Software Engineer</div>
+    <div>Cindy Chen, UI Designer</div>
+
+  {{/with}}   
+    
+
+</div>
+       
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
