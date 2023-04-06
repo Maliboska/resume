@@ -1,0 +1,70 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+  <h2>{{web.languages.[0].name}}<h2>
+  <h3>{{web.languages.[0].version}}</h3>
+  <p>{{web.languages.[0].description}}</p>
+
+  <ul>
+       {{#each web.languages.[0].elements}}
+          <li>
+              <h3>{{this.name}}</h3>
+               <p>{{this.description}}</p>
+               <ul>
+                   {{#each this.attributes}}
+                     <li>{{this.name}} - {{this.description}}</li>
+                   {{/each}}
+               </ul>
+           </li>
+       {{/each}}
+    </ul>   
+  <br>
+  <hr>
+
+  <h2>{{web.languages.[1].name}}<h2>
+  <h3>{{web.languages.[1].version}}</h3>
+  <p>{{web.languages.[1].description}}</p>
+
+  <ul>
+       {{#each web.languages.[1].properties}}
+            <li>
+                <h3>{{this.name}}</h3>
+                <p>{{this.description}}</p>
+                <ul>
+                    {{#each this.values}}
+                        <li>{{this.value}} - {{this.description}}</li>
+                    {{/each}}
+               </ul>
+           </li>
+       {{/each}}
+  </ul>
+  <br>
+  <hr>
+
+  <h2>{{web.languages.[2].name}}<h2>
+  <h3>{{web.languages.[2].version}}</h3>
+  <p>{{web.languages.[2].description}}</p>
+  <ul>
+       {{#each web.languages.[2].functions}}
+           <li>
+                <h3>{{this.name}}</h3>
+                <p>{{this.description}}</p>
+                <ul>
+                    {{#each this.parameters}}
+                        <li>{{this.name}} - {{this.type}} - {{this.description}}</li>
+                    {{/each}}
+                </ul>
+            </li>    
+        {{/each}}        
+   </ul>             
+</div>
+
+
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
