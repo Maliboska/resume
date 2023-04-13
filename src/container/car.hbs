@@ -1,0 +1,106 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<head>
+	<title>{{make}} {{model}} {{year}}</title>
+</head>
+<body>
+	<header>
+		<h1>{{make}} {{model}} {{year}}</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Exterior</h2>
+			<ul>
+                {{#with features.exterior}}
+                   {{#with wheels}}
+				        <li>Wheels: {{size}} inch {{type}} wheels in {{color}} color</li>
+                   {{/with}}
+                   {{#with headlights}}
+				        <li>Headlights: {{type}} headlights with {{brightness}} brightness and {{#if automatic}}automatic{{else}}manual{{/if}} mode</li>
+                   {{/with}}
+                   {{#with sunroof}}     
+				        <li>Sunroof: {{type}} {{size}} size {{#if automatic}}automatic{{else}}manual{{/if}} sunroof</li>
+                   {{/with}}    
+                {{/with}}   
+			</ul>
+		</section>
+		<section>
+			<h2>Interior</h2>
+			<ul>
+                {{#with features.interior}}
+                   {{#with seats}}
+				        <li>Seats: {{material}} {{color}} seats with {{#if heated}}heated{{else}}non-heated{{/if}} and {{#if ventilated}}ventilated{{else}}non-ventilated{{/if}} options</li>
+                   {{/with}}
+                   {{#with dashboard}}
+				        <li>Dashboard: {{material}} {{color}} dashboard with a {{display.size}} inch {{display.type}} display, {{#if display.touchscreen}}touchscreen{{else}}non-touchscreen{{/if}} </li>
+                   {{/with}}
+                   {{#with audio}}
+				       <li>Audio: {{system}} sound system with {{speakers}} speakers and {{#if subwoofer}}subwoofer{{else}}no subwoofer{{/if}}. It has Bluetooth and USB connectivity.</li>
+                    {{/with}}
+                {{/with}}       
+			</ul>
+		</section>
+		<section>
+			<h2>Safety</h2>
+			<ul>
+                {{#with features.safety}}
+                    {{#with airbags}}
+				        <li>Airbags: {{front}} front, {{side}} side, {{knee}} knee and {{rear}} rear airbags</li>
+                    {{/with}}
+                    {{#with assistance}}
+				        <li>Assistance: {{#if blind_spot_monitoring}}blind spot monitoring{{/if}}
+                         {{#if rear_cross_traffic_alert}}, rear cross traffic alert{{/if}}
+                         {{#if lane_departure_warning}}, lane departure warning{{/if}}
+                         {{#if adaptive_cruise_control}}, adaptive cruise control{{/if}}
+                         {{#if collision_warning}}, and collision warning{{/if}}
+                        </li>
+                    {{/with}}
+                {{/with}}        
+			</ul>
+		</section>
+		<section>
+			<h2>Engine</h2>
+			<ul>
+                {{#with engine}}
+				    <li>Type: {{type}}</li>
+				    <li>Displacement: {{displacement}} liters</li>
+				    <li>Horsepower: {{horsepower}} hp</li>
+				    <li>Torque: {{torque}}</li>
+                    {{#with transmission}}
+                       <li>Type: {{type}}</li>
+                       <li>Gears: {{gears}}</li>
+                    {{/with}}   
+                {{/with}} 
+            </ul>
+        </section>
+        <section>
+			<h2>Fuel_economy</h2>
+			<ul>
+                {{#with fuel_economy}}
+				    <li>City: {{city}}liters</li>
+				    <li>Highway: {{highway}} liters</li> 
+                    <li> Combined: {{combined}} liters</li>  
+                {{/with}} 
+            </ul>
+        </section>
+        <section>
+			<h2>Price</h2>
+			<ul>
+                {{#with price}}
+				    <li>Base: {{base}}$</li>
+				    <li>Destination: {{destination}}$</li>
+                    {{#with options}}
+                       <li>Navigation: {{navigation}}$</li>
+                       <li>Moonroof: {{moonroof}}$</li>
+                       <li>Premium_paint: {{premium_paint}}$</li>
+                    {{/with}}
+                    <li>Total: {{total}}$</li>    
+                {{/with}} 
+            </ul>
+        </section>
+    </main>
+</body>                   
+
