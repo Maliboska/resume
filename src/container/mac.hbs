@@ -1,0 +1,70 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<body>
+	<header>
+		<h1>{{name}}</h1>
+        <h2>{{description}} 
+        <h3>Price:{{price}}$</h3>
+        <h3>{{category}}</h3>
+	</header>
+	<main>
+		<section>
+			<h2>Features</h2>
+            <ul>
+                {{#with features}}
+                   {{#with processor}}
+                        <h3>Processor</h3>
+                        <li>{{brend}}, {{model}}, {{speed}}, {{cores}}, {{cache}}</li>
+                   {{/with}}
+                   {{#with memory}}
+                   <h3>Memory</h3>
+				        <li>{{type}}, {{size}}, {{speed}}</li>
+                   {{/with}}
+                   {{#with storage}}
+                   <h3>Storage</h3>     
+				        <li>{{type}}, {{size}}</li>
+                   {{/with}}
+                   {{#with display}}
+                        <h3>Display</h3>     
+				        <li>{{size}}, {{resolution}}, {{technology}}, {{color_space}}, {{brightness}}, {{refresh_rate}}</li>
+                   {{/with}}
+                   {{#with graphics}}
+                        <h3>Graphics</h3>
+                        <li>{{brend}}, {{model}}, {{memory}}</li>
+                   {{/with}}
+                    <h3>Ports</h3>
+                        {{#each ports}}
+                           <li>{{type}}-{{count}}</li>
+                           {{#if this.features}}
+                                <ul>
+                                    {{#each features}} 
+                                        <li>{{this}}</li>
+                                    {{/each}}
+                                </ul>
+                            {{/if}}        
+                        {{/each}}  
+                    {{#with battery}}
+                        <h3>Battery</h3>     
+				        <li>{{type}}, {{capacity}}, {{life}}</li>
+                   {{/with}}
+                   <h3>Weight</h3> 
+                   <li>{{weight}}</li>
+                   {{#with dimensions}}
+                        <h3>Dimensions</h3>     
+				        <li>{{height}}, {{width}}, {{depth}}</li>
+                   {{/with}}
+                   <h3>Operating_system</h3> 
+                   <li>{{operating_system}}</li>
+                   <h3>Accessories</h3>
+                   {{#each accessories}}
+                       <li>{{this.name}} {{this.price}}</li>
+                    {{/each}}   
+                {{/with}}   
+			</ul>
+		</section>
+    </main>
+</body>                   
+
