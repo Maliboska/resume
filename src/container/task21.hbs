@@ -1,0 +1,72 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<body>
+    <section>
+        {{#with heading.main}}
+           <h1 class=" heading">{{title}}</h1>
+           <p>{{text}}</p>
+           {{#with button_text}}
+                <button class="btn btn-primary">{{solid}}</button>
+                <button class="btn btn-outline-primary">{{outline}}</button>
+            {{/with}} 
+        {{/with}}
+    </section>
+
+    <section>
+        {{#with heading.second}}  
+           <h2 class="heading second">{{title}}</h2>
+           <p>{{text}}</p>
+           {{#with button_text}} 
+                <button class="btn btn-secondary">{{solid}}</button>
+                <button class="btn btn-outline-secondary">{{outline}}</button>
+            {{/with}}
+        {{/with}}        
+    </section>
+
+    <section>
+        {{#with heading.subblock}}  
+            <h2 class="heading subblock">{{title}}</h2>
+            <p>{{text}}</p>
+            {{#with button_text}} 
+                <button class="btn btn-dark">{{solid}}</button>
+                <button class="btn btn-outline-dark">{{outline}}</button>
+            {{/with}} 
+        {{/with}}       
+    </section>
+
+    <section>
+        {{#with nested_display}}
+            <h2 class="display-1 nested">{{title}}</h2>
+            <h3 class="display-4 children">{{header_text}}</h3>
+            <ul>
+                {{#with children_display}}
+                    <li>{{title}}</li>
+                    <li>{{text}}</li>
+                    <button class="btn btn-warning">{{button.text}}</button>
+                {{/with}}
+            </ul>
+            <h6 class="heading">{{header_text}}</h6>
+            <button class="btn btn-info">{{button.text}}</button>
+        {{/with}}
+    </section>
+
+    <section>
+        {{#with paragraph}}
+            <h2>{{title}}</h2>
+            <p>{{text}}</p>
+            {{#with button}}
+                <button><a href="{{url}}">{{text}}</a></button>
+            {{/with}}
+        {{/with}}        
+        <ul>
+            {{#each paragraph.list_name}}
+                <li><a href="{{this.url}}">{{this.text}}</a></li>
+            {{/each}}
+        </ul>
+    </section>
+</body>
+
+
