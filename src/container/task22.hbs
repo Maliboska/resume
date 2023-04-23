@@ -1,0 +1,63 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<head>
+   <div>
+       {{#with page_header}}
+            <h1 class="heading text-center">{{title}}</h1>
+            <p class="heading text-center">{{description}}</p>
+        {{/with}}    
+  </div>
+</head>
+<body>
+    <header>
+        {{#with section.about_us}}
+            <div class="display-6 text-end">{{title_list.main}}</div>
+            <h2 class="heading text-end">{{title_list.sub}}</h2>
+            <button class="btn btn-info">{{button.text}}</button>
+        {{/with}} 
+    </header>
+    <section>
+        {{#with section.advantage}}
+            <div class="display-5">{{title}}</div>
+            <div>
+                {{#with efficiency}}
+                    <h3 class="display-4">{{title}}</h3>
+                    <h4>{{sub_title}}</h4>
+                    <p>{{description}}</p>
+                    <button class="btn btn-warning">{{button}}</button>
+                {{/with}}
+            </div>
+        {{/with}}    
+        <div>
+            {{#with section.advantage.innovation}}
+                <h5 class="display-4 text-center">{{title}}</h5>
+                <h6 class="heading text-end">{{sub_title}}</h6>
+                <p class="heading text-end">{{description}}</p>
+                <button class="btn btn-warning">{{button}}</button>
+            {{/with}}    
+        </div>
+        <div>
+            {{#with section.advantage.collaboration}} 
+                <h5 class="display-4 text-end">{{title}}</h5>
+                <h6 class="heading text-end">{{sub_title}}</h6>
+                <p class="heading text-end">{{description}}</p>
+                <button class="btn btn-warning">{{button}}</button>
+            {{/with}}   
+        </div>
+    </section>
+    <footer>
+        {{#with section.agreement}} 
+            <h4 class="display-4">{{title}}</h4>
+            <div>
+                {{#with info}}
+                    <h5 class="heading">{{sub_title}}</h5>
+                    <p>{{detail.text}}</p>
+                    <button class="btn btn-success">{{detail.button}}</button>
+                {{/with}}    
+            </div>
+        {{/with}}    
+    </footer>
+</body>
+
