@@ -1,0 +1,228 @@
+<main>
+    <section class="col-12">
+        <div class="row g-2">
+            <div  class="col-6">  
+               {{#with navigation}}
+                  <a class="Link" href="{{links.0.href}}">{{links.0.text}}</a>
+                  <a class="Link" href="{{links.1.href}}">{{links.1.text}}</a> 
+                  <a class="Link" href="{{links.2.href}}">{{links.2.text}}</a>
+                    {{#with button}}
+                       <a class="btn btn-primary" href="{{href}}">{{text}}</a>
+                    {{/with}}   
+                {{/with}}
+                <br>
+                <hr>
+                <br>
+                {{#with header}}
+                    <h1 class="heading">{{title}}</h1>
+                    <p>{{description}}</p>
+                    {{#with button}}
+                       <a class="btn btn-primary" href="{{link}}">{{text}}</a>
+                    {{/with}} 
+                {{/with}}
+            </div>
+        </div>
+    </section>            
+    <br>
+    <hr>
+    <br>
+    {{#with city }}
+        <section>
+           <h2>{{title}}</h2>
+            <div class="row col-10">
+                {{#each cards}}
+                    <div class="col-6 gy-2 gx-3">
+                        {{#with picture}}
+                            <img class="card-img-top" src="{{src}}" alt="{{alt}}">
+                        {{/with}}
+                        <div class="card- body text-bg-warning">
+                            <h3 class="card-title">{{title}}</h3>
+                            <p class="text">{{description}}</p>
+                            {{#with button}}
+                                <a class="btn btn-primary" href="{{href}}">{{text}}</a>
+                            {{/with}}     
+                        </div>
+                    </div>     
+                {{/each}}
+            </div>   
+        </section> 
+    {{/with}} 
+
+    <br>
+    <hr>
+    <br> 
+            
+    <section class="col-12">
+        <table class="table table-striped table-bordered text-bg-light">
+           {{#with winner}}
+                <h2 class="heading">{{title}}</h2>
+                {{#with table}}
+                    <thead>
+                        <tr>
+                           <th>#</th>
+                           <th>name</th>
+                           <th>surname</th>
+                           <th>nickname</th>
+                        </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                            <th>1</th>
+                            <td>Ada</td>
+                            <td>Lovelace</td>
+                            <td>The Enchantress of Numbers</td>
+                       </tr> 
+                       <tr>
+                           <th>2</th>
+                           <td>Grace</td>
+                           <td>Hopper</td>
+                           <td>Amazing Grace</td>
+                        </tr> 
+                        <tr>
+                            <th>3</th>
+                            <td>Katherine</td>
+                            <td>Johnson</td>
+                            <td>The Human Computer</td>
+                        </tr> 
+                    </tbody>
+                {{/with}}       
+            {{/with}}
+        </table>
+   </section>
+   <br>
+   <hr>
+   <br>
+   {{#with gallery}}
+      <section>
+           <h2 class="heading">{{title}}</h2>
+           <br>
+           <br>
+            <div class="row col-10">
+                <div class="col-4 gy-2 gx-3">
+                    <div class="card card-header">
+                        <h3>The Mona Lisa</h3>
+                        <br>
+                    </div>
+                    <ul class="card list-group-item">
+                        <li class="card ">Painting</li>
+                        <li class="card ">Oil on poplar panel</li>
+                        <li class="card ">1503-1519</li>
+                    </ul>
+                </div>
+                <div class="col-4 gy-2 gx-3">
+                    <div class="card card-header">
+                        <h3>The Persistence of Memory</h3>
+                    </div>
+                    <ul class="card list-group-item">
+                        <li class="card ">Painting</li>
+                        <li class="card">Oil on canvas</li>
+                        <li class="card">1931</li>
+                    </ul>
+                </div>
+                <div class="col-4 gy-2 gx-3">
+                    <div class="card card-header">
+                        <h3>The Starry Night</h3>
+                    </div>
+                    <ul class="card list-group-item">
+                        <li class="card">Painting</li>
+                        <li class="card">Oil on canvas</li>
+                        <li class="card">1889</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    {{/with}}
+    <br>
+    <hr>
+    <br>
+  {{#with relaxion}}
+       <h2 class="display 3">{{title}}</h2>
+       <div class="row col-10">
+           {{#each cards}}
+               <div class="col-6 gy-2 gx-3">
+                   <div class="card text-bg-secondary">
+                        <header>{{header}}</header>
+                        <hr>
+                        <div>{{title}}</div>
+                        <p>{{description}}</p>
+                   </div>
+                </div>
+            {{/each}}
+       </div>
+    {{/with}} 
+    <br>
+    <hr>
+    <br>
+    
+    <div class="row col-10">
+        <div class="col-4 gy-2 gx-3">
+            <div class="card card-header text-center text-bg-light">Cooking</div>
+            <div class="card card-body text-center">
+                <h6 class="card-title text-bg-light">The Joy of Cooking</h6>
+                <p>Cooking is a creative outlet that can bring people together over delicious food.</p>
+                <br>
+                <button class="btn btn-primary">Learn More</button>
+            </div>
+            <div class="card card-footer text-center text-bg-light">Photo by Brooke Lark on Unsplash</div>
+        </div>   
+        <div class="col-4 gy-2 gx-3">
+            <div class="card card-header text-center text-bg-light">Travel</div>
+            <div class="card card-body text-center">
+                <h6 class="card-title text-bg-light">The Benefits of Traveling</h6>
+                <p>Traveling broadens your perspective, provides new experiences, and creates lasting memories.</p>
+                <button class="btn btn-primary">Explore</button>
+            </div>
+            <div class="card card-footer text-center text-bg-light">Photo by Sime Basioli on Unsplash</div>
+        </div>   
+    </div>
+    <br>
+    <hr>
+    <br>
+    {{#with proposition}}
+       <h2 class="display-2">{{title}}</h2>
+       <div class="row col-10">
+           {{#each card}}
+               <div class="col-6 gy-2 gx-3">
+                   <div class="card text-bg-warning">
+                        <header>{{header}}</header>
+                        <hr>
+                        <div>{{title}}</div>
+                        <p>{{description}}</p>
+                   </div>
+                </div>
+            {{/each}}
+       </div>
+    {{/with}}
+    <br>
+    <hr>
+    <br>
+    {{#with footer}}
+        <h5 class="heading" >{{title}}</h5>
+        <div class="row col-12">
+            <div class="col-3 g-4">
+                <div class="card">
+                    {{#each navigation}}
+                       <div>{{text}}</div>
+                       <a>{{href}}</a>
+                    {{/each}}
+                </div>   
+            </div> 
+            <div class="col-3 g-4">
+                <div class="card text-bg-dark">
+                    {{#each socialMedia}}
+                        <div>{{name}}</div>
+                        <a>{{link}}</a>
+                    {{/each}}
+                </div>    
+            </div>   
+            <div class="col-3 g-4">
+                <div class="card text-bg-info">
+                    {{#each partners}}
+                        <div>{{name}}</div>
+                        <a>{{link}}</a>
+                    {{/each}}
+                </div>  
+            </div>
+        </div>        
+    {{/with}}   
+</main>    
