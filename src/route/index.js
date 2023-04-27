@@ -1550,3 +1550,21 @@ router.get('/task31', function (req, res) {
 // Підключаємо роутер до бек-енду
 module.exports = router
 
+//==================================================================
+
+router.get('/bootstrap1', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('bootstrap1', {
+    layout: `bootstrap`,
+  })
+   
+  //                  ↑↑ сюди вводимо JSON дані
+})
+ 
+// Підключаємо роутер до бек-енду
+module.exports = router
+
+//=================================================================
+
