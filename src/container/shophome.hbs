@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html>
+    <main class="p-5">
+        <div class="row">
+            <div class="col-12 mb-5">
+                <div class="nav">
+                    <div class="nav-item">
+                        <a href="https://github.com/" class="nav-link active">Home</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="https://www.google.com/" class="nav-link">Contacts</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="https://www.youtube.com/" class="nav-link disabled">Help</a>
+                    </div>
+                </div> 
+            </div>    
+        </div>
+        <br>
+        <hr>
+        {{#with newsBlock}}
+            <h3 class="text-center">{{title}}</h3>
+            <div class="row col-10">
+                {{#each cards}}
+                    <div class="col-3 gy-2 gx-3">
+                        <div class="card text-bg-secondary">
+                            <div>
+                               {{title}}
+                               <span class="badge text-bg-success rounded-pill ">Top</span>
+                               <span class="badge text-bg-danger rounded-pill">New</span>
+                            </div>
+                            <hr>
+                            <p>{{description}}</p>
+                        </div>
+                    </div>
+               {{/each}}     
+            </div>
+        {{/with}}    
+        <br>
+        <br>
+        <hr>
+        <br>
+        <div class="col-12 mb-5">
+            <div class="nav nav-tabs">
+                <div class="nav-item">
+                    <strong class="nav-link active text-top">Electronics</strong>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link">Home & Kitchen</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link">Clothing & Accessories</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link disabled">Toys & Games</a>
+                </div>
+            </div>    
+        </div>
+        <br>
+        <hr>
+        <br>
+        {{#with goodsBlock}}
+            <div class="row col-12">
+                {{#each cards}}
+                    <div class="col-4 gy-2 gx-3">
+                        <div class="card text-bg-secondary">
+                           <img class="card img-top" src="{{image}}">
+                           <h5>{{title}}<span class="badge text-bg-success rounded-pill ">Hot</span>
+                               <span class="badge text-bg-primary rounded-pill">New</span></h5>
+                           <p>{{description}}</p>
+                        </div>
+                    </div>    
+                {{/each}}  
+            </div> 
+        {{/with}}
+        <br>
+        <hr>
+        <br>
+        {{#with service}}
+            <div class="row col-12">
+                <div class="card text-bg-secondary">  
+                    <h2 class="heating">{{title}}</h2>
+                    <p>{{description}}</p>
+                    <div class="col-4">
+                        <button class="btn btn-primary">
+                            <a href="https://www.youtube.com/">
+                                <h5 class="text-light">Show More</h5>
+                            </a>   
+                        </button>
+                    </div> 
+                    <br>   
+                    <div class="col-4">
+                        <button class="btn btn-primary">
+                            <a href="https://www.youtube.com/">
+                                <h5 class="text-light">Show More</h5>
+                            </a>   
+                        </button>
+                    </div>
+                </div> 
+            </div>
+        {{/with}}
+        <br>
+        <hr>
+        <br>
+        {{#with service}}
+            <div class="row col-12">
+                <div class="card text-bg-success text-center">  
+                    <h2 class="heating">{{title}}</h2>
+                    <p>{{description}}</p>
+                    <div class="col-12">
+                        <button class="btn btn-primary  text-center">
+                            <a href="https://www.youtube.com/">
+                                <h5 class="text-light">Show More</h5>
+                            </a>   
+                        </button>
+                    </div>   
+                </div> 
+            </div>
+        {{/with}}                            
+    </main>
+</html>        
+        
+            
