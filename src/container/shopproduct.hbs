@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html>
+    <main class="p-5">
+        <div class="row">
+            <div class="col-12 mb-3">
+                <div class="nav">
+                    <div class="nav-item">
+                        <a href="https://github.com/" class="nav-link home">Home</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="https://www.google.com/" class="nav-link">Contacts</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="https://www.youtube.com/" class="nav-link disabled">Help</a>
+                    </div>
+                </div> 
+            </div>    
+        </div>
+        <hr>
+        <br>
+        {{#with breadcrumb}}
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="breadcrumb">
+                        <div class="breadcrumb-item">
+                            <a href="https://github.com/">Home</a>
+                        </div>    
+                        <div class="breadcrumb-item">
+                            <a href="https://www.google.com/">PC</a>
+                        </div>    
+                        <div class="breadcrumb-item">
+                            <a href="https://www.google.com/">Windows</a>
+                        </div>    
+                        <div class="breadcrumb-item">
+                            <a href="https://www.youtube.com/">Product PC #3123</a>
+                        </div>        
+                    </div> 
+                </div>
+            </div>        
+        {{/with}}    
+        <hr>
+        <br>
+        {{#with productData}}
+            <div class="row col-12">
+                <div class="col-6 g-3">
+                    <div class="card">
+                        <img class="card img-top" src="https://picsum.photos/400/200">
+                        {{#with info}}
+                            <h5 class="card title">{{title}}</h5>
+                            <p>{{about}}</p>
+                            <div>{{price}}</div>
+                            {{#with category}}
+                                <h5><span class="badge text-bg-warning rounded-pill ">Hot</span>
+                               <span class="badge text-bg-primary rounded-pill">New</span>
+                               <span class="badge text-bg-info rounded-pill">Bonus</span></h5>
+                            {{/with}}
+                       {{/with}}
+                    </div>
+                </div>    
+                <br>
+                <div class="col-6 g-3">
+                    <table class="table table-striped table-bordered text-bg-light">
+                      {{#with item}}
+                           <thead>
+                                <tr>
+                                   <th>#</th>
+                                   <th>color</th>
+                                   <th>price</th>
+                                </tr>
+                           </thead>
+                           <tbody>
+                                <tr>
+                                    <td>id312</td>
+                                    <td>red</td>
+                                    <td>1100$</td>
+                               </tr> 
+                               <tr>
+                                    <td>id532</td>
+                                    <td>blue</td>
+                                    <td>1050$</td>
+                                </tr> 
+                                <tr>
+                                    <td>id643</td>
+                                    <td>dark</td>
+                                    <td>999$</td>
+                                </tr> 
+                           </tbody>
+                       {{/with}}       
+                    </table>
+                    <br>
+                    {{#with param}}
+                        <div class="card">
+                            <h5 class="card-header">{{title}}</h5>
+                            <a class="second item">Экран 15.6</a>
+                            <hr>
+                            <a class="third item">IPS (1920x1080)</a>
+                            <hr>
+                            <a class="third item">Full HD</a>
+                        </div>
+                    {{/with}}
+                    <br>
+                    <br>
+                    {{#with alert}}
+                        <div class="card text-bg-secondary">
+                            <h5 class="text-danger">{{text}}</h5>
+                        </div> 
+                    {{/with}}
+                    <br>
+                    <br>   
+                </div>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <br>
+                <div class="card">
+                    {{#with actionList}}
+                        <div class="row col-8">
+                            <div class="col-3 g-2">
+                                <button class="btn btn-warning">Buy</button>
+                            </div>
+                            <div class="col-3 g-2">
+                                <button class="btn btn-outline-danger">Add to cart</button>
+                            </div>
+                            <div class="col-3 g-2">
+                                <button class="btn btn-success">Like</button>
+                            </div>
+                            <div class="col-3 g-2">
+                                <button class="btn btn-outline-success">Share</button>
+                            </div> 
+                        </div>        
+                   {{/with}}   
+                </div>       
+            </div>  
+        {{/with}}
+        <br>
+        <hr>
+        <br>
+        {{#with goodsOtherBlock}}
+            <h2 class="header text-center">{{title}}</h2>
+            <div class="row col-12">
+                {{#with cards}}
+                    <div class="col-4 gy-2 gx-3">
+                        <div class="card text-bg-secondary">
+                           <img class="card img-top" src="https://picsum.photos/400/200">
+                           <h5>iPhone 13<span class="badge text-bg-warning rounded-pill ">Hot</span>
+                               <span class="badge text-bg-primary rounded-pill">New</span></h5>
+                           <p>The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.</p>
+                        </div>
+                    </div>    
+                    <div class="col-4 gy-2 gx-3">
+                        <div class="card text-bg-secondary">
+                           <img class="card img-top" src="https://picsum.photos/400/200">
+                           <h5>MacBook Pro</h5>
+                           <p>Apple's high-end laptop features a 16-inch Retina display, powerful M1 Pro or M1 Max chip, and up to 64GB of RAM.</p>
+                        </div>
+                    </div>    
+                    <div class="col-4 gy-2 gx-3">
+                        <div class="card text-bg-secondary">
+                           <img class="card img-top" src="https://picsum.photos/400/200">
+                           <h5>AirPods Pro</h5>
+                           <p>Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.</p>
+                        </div>
+                    </div>    
+                {{/with}}  
+            </div> 
+        {{/with}}
+        <br>
+        <hr>
+        <br>
+        {{#with service}}
+            <div class="row col-12">
+                <div class="card text-bg-success text-center">  
+                    <h2 class="heating">{{title}}</h2>
+                    <p>{{description}}</p>
+                    <div class="col-12">
+                        <button class="btn btn-primary  text-center">
+                            <a href="https://www.youtube.com/">
+                                <h5 class="text-light">Show More</h5>
+                            </a>   
+                        </button>
+                    </div>
+                    <br>   
+                </div> 
+            </div>
+        {{/with}}
+        <br>
+        <hr>
+        <br>
+        <footer>
+            <div class="footer-links">
+                <div class="row col-12">
+                    <div class="col-2 g-5">
+                        <div><a href="https://www.youtube.com/" class="nav-home">Home</a></div>
+                        <div><a href="https://www.youtube.com/feed/trending" class="nav-link">Trending</a></div>
+                        <div><a href="https://www.youtube.com/feed/subscriptions" class="nav-link">Subscriptions</a></div>
+                        <div><a href="https://www.youtube.com/feed/library"  class="nav-link disabled">Library</a></div>
+                    </div>
+                    <div class="col-2 gy-5">
+                        <div><a href="https://www.youtube.com/feed/history" class="nav-home">History</a></div>
+                        <div><a href="https://www.youtube.com/feed/my_videos" class="nav-link">Your Videos</a></div>
+                        <div><a href="https://www.youtube.com/live" class="nav-link">Live</a></div>
+                        <div><a href="https://www.youtube.com/account" class="nav-link disabled">Settings</a></div>
+                    </div>   
+                    <div class="col-2 g-5">
+                        <div><a href="https://www.youtube.com/playlist?list=WL" class="nav-home">Watch Later</a></div>
+                        <div><a href="https://www.youtube.com/playlist?list=LL" class="nav-link">Liked Videos</a></div>
+                        <div><a href="https://www.youtube.com/music" class="nav-link">Music</a></div>
+                        <div><a href="https://www.youtube.com/gaming" class="nav-link disabled">Gaming</a></div>
+                    </div>   
+                    <div class="col-2 g-5">
+                        <div><a href="https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg" class="nav-home">Sports</a></div>
+                        <div><a href="https://www.youtube.com/news" class="nav-link">News</a></div>
+                        <div><a href="https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ" class="nav-link">Fashion & Beauty</a></div>
+                        <div><a href="https://www.youtube.com/learning" class="nav-link disabled">Learning</a></div>
+                    </div>   
+                    <div class="col-3 g-5">    
+                        <div><a href="https://www.youtube.com/feed/history/report_history" class="nav-home">Report History</a></div>
+                        <div><a href="https://support.google.com/youtube/?hl=en" class="nav-link">Help</a></div>
+                        <div><a href="https://support.google.com/youtube/answer/4347644?hl=en"  class="nav-link">Send Feedback</a></div>
+                        <div><a href="https://www.youtube.com/about/" class="nav-link disabled">About</a></div>
+                        </ol>
+                    </div>    
+                </div>    
+            </div>
+        </footer>
+    </main>
+</html>        
+        
+            
