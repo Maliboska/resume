@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <main class="p-5">
+        <div class="row">
+            <div class="col-12 mb-3">
+                <div class="nav">
+                    {{#with navigation}}
+                        {{#each links}} 
+                            <div class="nav-item">
+                                <a href="{{href}}" class="nav-link home"
+                                class="m-1 text-decoration-none 
+                                {{#if @last}} nav-link disabled
+                                {{/if}}">{{text}}</a>
+                            </div>
+                        {{/each}}
+                        <hr>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        {{#with header}}
+            <div class="m-2">
+                <h2>{{title}}</h2>
+                {{#with button}}
+                    <button><a href="{{link}}">{{text}}</a></button>
+                {{/with}}
+            </div>    
+        {{/with}}     
+    </main>
+    <hr>
+    <div class="p-5">
+        
+            <div class="row">
+                {{#each goodsBlock}}
+                    <div class="col-2">
+                       <img class="card img-top" src="{{image}}">
+                    </div>
+                    <div class="col-4">
+                       <h5>{{name}}</h5>
+                       <p>{{description}}</p>
+                    </div>
+                    <div class="col-2">
+                        {{#with price}}
+                           <div>{{title}}:{{value}}</div>
+                        {{/with}}
+                    </div>
+                    <div class="col-1">
+                        <div>{{amount}}</div>
+                    </div>
+                    <div class="col-2">
+                        {{#each buttons}}
+                            <button class="d-flex my-1 btn {{#if isPrimary}}btn-primary{{/if}}
+                            {{#if isDanger}}btn-danger{{/if}}">{{text}}</button>
+                        {{/each}} 
+                    </div>      
+                {{/each}}
+            </div>    
+        </div>    
+    </div>
+    <hr>
+    <div class="row p-5">
+        <div class="col-12 m-3">
+            {{#with total}}
+               <h4>{{title}}</h4>
+               <h1>{{amount}}</h1>
+               <div>{{delivery}}</div>
+                {{#each buttons}}
+                    <div class="m-3">
+                        <button class="d-flex my-1 btn {{#if isSuccess}}btn-success{{/if}}
+                        {{#if isOutline}}btn-outline-success{{/if}}"><a href="{{link}}" class="text-dark">{{text}}</a></button>
+                    </div>
+                {{/each}}    
+            {{/with}}
+        </div>
+    </div>
+    <hr>
+    {{#with goodsOtherBlock}}
+       <h2 class="text-center">{{title}}</h2>
+       <div class="row col-12 p-5">
+            {{#each cards}}
+                <div class="col-4 gy-2 gx-3">
+                    <div class="card text-bg-secondary">
+                        <img class="card img-top" src="{{image}}">
+                        <h5>{{title}}<span class="badge text-bg-success rounded-pill ">Hot</span>
+                        <span class="badge text-bg-primary rounded-pill">New</span></h5>
+                        <p>{{description}}</p>   
+                   </div>     
+                </div>
+            {{/each}}
+        </div>          
+    {{/with}}
+    <hr>
+    {{#with subscribe}}
+        <div class="row p-5 m-2">
+            <div class="card text-bg-dark">
+                <h2 class="heading">{{header}}</h2>
+                    <p>{{description}}</p>
+                    {{#each buttons}}
+                        <div class="m-2">
+                           <button class="btn btn-primary text-light">
+                           <a href="{{this.link}}" class="text-light">{{this.text}}</a></button>
+                        </div>
+                    {{/each}}
+            </div>        
+        </div>        
+    {{/with}}          
+    <hr>
+    <footer>
+        <div class="py-5 ps-5">
+            <div class="row g-4">
+                {{#each footer}}
+                    <div class="col-2">
+                        {{#each this}}
+                            <div>
+                                <a href="{{this.link}}" 
+                                class="m-1 text-decoration-none 
+                                {{#if @last}} nav-link disabled 
+                                {{/if}}">{{this.text}}</a>
+                            </div>
+                        {{/each}}
+                    </div>
+                {{/each}}         
+            </div> 
+        </div>      
+    </footer>
+</html>        
