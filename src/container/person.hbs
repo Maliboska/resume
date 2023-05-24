@@ -5,67 +5,64 @@
 
 <div>
   {{#with person}}
-    
-    <div>
-      <h1>{{name}}</h1>
-    </div>
+    <h3>{{name}}</h3>
     <div>{{age}}, {{gender}}</div>
-     
-    <br>
-
-    <div>
-      <b>Address</b>
-    <div>
-      <address>123 Main St, New York, NY, 10001, USA</address>
-    </div> 
-    <br>
-    <hr>
-    
-    <div>
-      <b>Education</b>
-    </div>
-    
-    <div>degree: Bachelor of Science</div>
-    <div>major: Computer Science</div>
-    <div>university: Massachusetts Institute of Technology</div>
-    <div>graduationYear: 2012</div> 
-
-    <br>
-
-    <div>
-      <b>WorkExperience</b>
-    </div>
-    <div>Google</div>
-    <div>Software Engineer</div>
-    <div>2012.06.01-2016.12.31</div>
-    <p>Developed new features for Google Maps,
-    Worked on improving search algorithms,</p>
-
-    <br>
-    <div>1990,Technology</div>
-    <div>John Smith,CEO</div>
-    <div>Executive</div>
-    <br>
-    <em>Projects</em>
-    <div>Project Alpha</div>
-    <div>Developing new software platform (In Progress)</div>
-    <em>Teams</em>
-    <div>Awesome Team</div>
-    <div>John Smith,Team Leader</div>
-    <div>john.smith@example.com</div>
-    <em>Team_members</em>
-    <div>Alice Johnson,Tehnology Engineer</div>
-    <div>alice.johnson@example.com</div>
-    <div>Java, Python, SQL</div>
-    <br>
-    <em>Projects</em>
-    <div>Project A</div>
-    <div>Lorem ipsum dolor sit amet</div>
-    <div>Java,Spring Framework</div>
-    <em>Team_members</em>
-    <div>Bob Lee,Software Engineer</div>
-    <div>Cindy Chen, UI Designer</div>
-
+    {{#with address}}
+      <div>{{street}}, {{city}}, {{state}}, {{zip}}, {{country}}</div>
+    {{/with}} 
+    {{#each education}}
+      <div>{{degree}}</div>
+      <div>{{major}}</div>
+      <div>{{university}}</div>
+      <div>{{graduationYear}}</div>
+    {{/each}}
+    {{#each workExperience}}
+      <h4>{{company}}</h4>
+      <h5>{{title}}</h5>
+      <div>{{startDate}}-{{endDate}}</div>
+      {{#each responsibilities}}
+        <p>{{this}}</p>
+      {{/each}}
+      <div>{{year_founded}}</div>
+      <div>{{industry}}</div>
+      {{#each employees}}
+        <h4>{{name}}</h4>
+        <div>{{position}}</div>
+        <div>{{department}}</div>
+        {{#each projects}}
+          <h4>{{name}}</h4>
+          <p>{{description}}</p>
+          <div>{{status}}</div>
+          {{#each teams}}
+            <h4>{{team_name}}</h4>
+            {{#with team_leader}}
+              <h4>{{name}}</h4>
+              <div>{{title}}</div>
+              <div>{{email}}</div>
+            {{/with}}
+            {{#each team_members}}
+             <h4>{{name}}</h4>
+              <div>{{title}}</div>
+              <div>{{email}}</div>
+              {{#each skills}}
+                <div>{{this}}</div>
+              {{/each}}
+              {{#each projects}}
+                <h4>{{name}}</h4>
+                <p>{{discription}}</p>
+                {{#each technologies}}
+                  <div>{{this}}</div>
+                {{/each}}
+                {{#each team_members}}
+                  <h4>{{name}}</h4>
+                  <div>{{title}}</div>
+                {{/each}}
+              {{/each}}
+            {{/each}}
+          {{/each}} 
+        {{/each}}
+      {{/each}}
+    {{/each}}
   {{/with}}   
     
 

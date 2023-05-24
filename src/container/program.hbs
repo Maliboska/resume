@@ -4,50 +4,56 @@
 --}}
 
 
-<div>
+<html>
   {{#with program}}
-    <h1>{{excursion.name}}</h1>
-    <p>Location: {{excursion.location.city}}, {{excursion.location.country}}</p>
-    <p>Date: {{excursion.date}}</p>
-  {{/with}}
-
-  <h2>Program</h2>
-  {{#each program.excursion.program}}
-    <div>
+    {{#with excursion}}
       <h2>{{name}}</h2>
-      <p>Type: {{type}}</p>
-      <p>Duration: {{duration}} hours</p>
-      {{#if details.museum}}
-        <h3>Museum Visit</h3>
-        <p>Name: {{details.museum.name}}</p>
-        <p>Location: {{details.museum.location.address}}, {{details.museum.location.city}}, {{details.museum.location.country}}</p>
-        {{#each details.museum.exhibits}}
-          <div>
-            <h4>{{name}}</h4>
-            <p>Artist: {{#if artist}}{{artist}}{{else}}Unknown{{/if}}</p>
-            <p>Description: {{description}}</p>
-            <p>Audio Guide: {{#if audio_guide}}Yes{{else}}No{{/if}}</p>
-          </div>
-        {{/each}}
-      {{/if}}
-      {{#if details.venue}}
-        <h3>Cultural Show</h3>
-        <p>Venue: {{details.venue.name}}</p>
-        <p>Location: {{details.venue.location.address}}, {{details.venue.location.city}}, {{details.venue.location.country}}</p>
-        {{#each details.performers}}
-          <div>
+      {{#with location}}
+        <h3>{{city}}, {{country}}</h3>
+      {{/with}} 
+      <div>{{date}}</div>
+      {{#each program}}
+        <h3>{{name}}</h3>
+        <div>{{type}}</div>
+        <div>Duration: {{duration}}</div>
+        {{#with details}}
+          {{#with museum}}
+            <p>{{name}}</p>
+            {{#with location}}
+              <div>Location: {{address}}, {{city}}, {{country}}</div>
+            {{/with}}
+            {{#each exhibits}}
+              <h4>{{name}}</h4>
+              <p>{{artist}}</p>
+              <p>{{description}}</p>
+              <p>Audio Guide: {{audio_guide}}</p>
+            {{/each}}
+            {{#with guide}}
+              <h4>{{name}}</h4>
+              <div>{{language}}</div>
+              <div>Rating: {{rating}}</div>
+            {{/with}}
+          {{/with}}
+          {{#with venue}}
+            <p>{{name}}</p>
+            {{#with location}}
+              <div>Location: {{address}}, {{city}}, {{country}}</div>
+            {{/with}}
+          {{/with}}  
+          {{#each performers}}
             <h4>{{name}}</h4>
             <p>Type: {{type}}</p>
-          </div>
-        {{/each}}
-      {{/if}}
-      <h3>My Guide</h3>
-      <p><b>Name:</b> Sophie</p>
-      <p><b>Language:</b>English</p>
-      <p><b>Rating:</b>4.6</p>
-    </div>
-  {{/each}}
-</div>
+          {{/each}}
+          {{#with guide}}
+            <h4>{{name}}</h4>
+            <div>{{language}}</div>
+            <div>Rating: {{rating}}</div>
+          {{/with}}
+        {{/with}}        
+      {{/each}}
+    {{/with}} 
+  {{/with}}
+</html>
 
 
 
