@@ -3,12 +3,71 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
  --}}
 
-<div class="p-5">
-    <h1>USB хаб Type C 12 в 1 HDMI VGA AUX 3.5 mm</h1>
-
-    <button type="button" class="btn btn-secondary">Купити</button>
-</div>
-
+<html>
+    {{#with page}}
+       {{#with title}}
+          <h1 class="text-center">Yana Maliborska</h1>
+       {{/with}}
+    {{/with}}
+    <div class="row">
+        <div class="col-5 mt-5">
+            <div class="card border border-0 text-center mb-4">
+                <div class="card-header">
+                    <h5 class="card-title">
+                        This project presents the development of the "Summary" and "Internet store" pages.
+                        This project is developed on the basis of such technologies as HTML, Handelbars, Bootstrap.
+                    </h5>
+                </div>
+            </div>
+       </div>
+       <div class="col-7 mt-5">
+            <div class="card border border-0 text-center mb-4">
+                <div class="card-header">
+                    <h5 class="card-title">ShopProject</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="d-flex flex-wrap justify-content-center">
+                                {{#each shopProject}}
+                                    <div class="m-2">
+                                       <a href="{{href}}" class="btn btn-secondary">{{text}}</a>
+                                    </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <h5 class="card-title">ResumeProject</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                       <div class="col">
+                            <div class="d-flex flex-wrap justify-content-center">
+                                {{#each resumeProject}}
+                                    <div class="m-2">
+                                        <a href="{{href}}" class="btn btn-secondary">{{text}}</a>
+                                    </div>
+                               {{/each}}
+                               {{#each testProject}}
+                                    <div class="m-2">
+                                       <a href="{{href}}" class="btn btn-secondary">{{text}}</a>
+                                    </div>
+                               {{/each}}
+                               {{#each bootstrapProject}}
+                                    <div class="m-2">
+                                        <a href="{{href}}" class="btn btn-secondary">{{text}}</a>
+                                    </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>
 {{!-- 
     Цей код містить лише те, що буде виводитись в <body>
     Адже наш layout/default.hbs має вже структуру HTML
