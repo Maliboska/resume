@@ -41,7 +41,7 @@ router.get('/', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('index', {
-    layout:'basic',
+    layout:`bootstrap`,
 
     page:{
       title:{
@@ -50,7 +50,7 @@ router.get('/', function (req, res) {
     },
 
     header,
-    
+
     shopProject:[
       {
         text:'shophome',
