@@ -40,10 +40,113 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout:`bootstrap`,
+
+    page:{
+      title:{
+        text:'Головна сторінка'
+      },
+    },
+
+    header,
+
+    shopProject:[
+      {
+        text:'shophome',
+        href:'/shophome',
+      },
+      {
+        text:'shopproduct',
+        href:'/shopproduct',
+      },
+      {
+        text:'bootstrap',
+        href:'/bootstrap',
+      },
+      {
+        text:'shopreview',
+        href:'/shopreview',
+      },
+      {
+        text:'shopcart',
+        href:'/shopcart',
+      },
+      {
+        text:'shoporder',
+        href:'/shoporder', 
+      },
+    ],
+    resumeProject:[
+      {
+        text:'skills',
+        href:'/skills',
+      },
+      {
+        text:'summary',
+        href:'/summary',
+      },
+      {
+        text:'education',
+        href:'/education',
+      },
+      {
+        text:'work',
+        href:'/work',
+      },
+    ],
+    testProject:[
+      {
+        text:'person',
+        href:'/person',
+      },
+      {
+        text:'bio',
+        href:'/bio',
+      },
+      {
+        text:'program',
+        href:'/program',
+      },
+      {
+        text:'web',
+        href:'/web',
+      },
+    ],
+    bootstrapProject:[
+      {
+        text:'js',
+        href:'/js',
+      },
+      {
+        text:'car',
+        href:'/car',
+      },
+      {
+        text:'mac',
+        href:'/mac',
+      },
+      {
+        text:'task21',
+        href:'/task21',
+      },
+      {
+        text:'task22',
+        href:'/task22',
+      },
+      {
+        text:'task31',
+        href:'/task31',
+      },
+    ],
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
+// ================================================================
+
+// Підключаємо роутер до бек-енду
+module.exports = router
 // ================================================================
 
 //              ↙ тут вводимо шлях (PATH) до сторінки
